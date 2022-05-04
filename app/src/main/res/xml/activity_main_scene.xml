@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end1"
+        motion:constraintSetStart="@id/start1"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/button1"
+            motion:touchAnchorSide="right" />
+
+       <KeyFrameSet>
+           <KeyPosition
+               motion:framePosition="25"
+               motion:keyPositionType="pathRelative"
+               motion:motionTarget="@id/button2"
+               motion:percentY="-0.3"
+               motion:percentX="0.75"/>
+           <KeyPosition
+               motion:framePosition="50"
+               motion:keyPositionType="pathRelative"
+               motion:motionTarget="@id/button2"
+               motion:percentY="-0.4"/>
+           <KeyPosition
+               motion:framePosition="75"
+               motion:keyPositionType="pathRelative"
+               motion:motionTarget="@id/button2"
+               motion:percentY="-0.3"
+               motion:percentX="0.25"/>
+
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start1">
+        <Constraint
+            android:id="@+id/button3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintVertical_bias="0.604"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33FF39" />
+            <CustomAttribute
+                motion:attributeName="Text"
+                motion:customStringValue="A3"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/button4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintVertical_bias="0.781"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33FF39" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/button1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:text="A1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.077"
+            android:layout_marginLeft="16dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33FF39" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/button2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="16dp"
+            android:text="A2"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="16dp"
+            motion:layout_constraintVertical_bias="0.472">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33D4FF" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/button5"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/imagenDeFondo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end1">
+        <Constraint
+            android:id="@id/button1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="16dp"
+            android:text="A1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="16dp"
+            motion:layout_constraintVertical_bias="0.757">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33D4FF" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/button2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="24dp"
+            android:text="A2"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.181"
+            android:layout_marginLeft="24dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33FF39" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetStart="@+id/start1"
+        motion:constraintSetEnd="@+id/end2"
+        motion:duration="1000">
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/button4"/>
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="2"
+                android:scaleY="2"
+                motion:framePosition="50"
+                motion:motionTarget="@id/button4" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/end2" >
+        <Constraint
+            android:id="@+id/button4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            motion:layout_constraintVertical_bias="0.242">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33D4FF" />
+        </Constraint>
+
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end3" >
+        <Constraint
+            android:id="@+id/button3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#33D4FF" />
+            <CustomAttribute
+                motion:attributeName="Text"
+                motion:customStringValue="Presiona de Nuevo"/>
+        </Constraint>
+        <Constraint
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/imagenDeFondo"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_editor_absoluteX="411dp" />
+        <Constraint
+            android:id="@+id/button5"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            motion:layout_editor_absoluteY="251dp"
+            motion:layout_editor_absoluteX="174dp" />
+        <Constraint
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            motion:layout_editor_absoluteY="251dp"
+            motion:layout_editor_absoluteX="174dp" />
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetStart="@+id/start1"
+        motion:constraintSetEnd="@+id/end3">
+        <OnClick
+            motion:clickAction="transitionToEnd"
+            motion:targetId="@id/button3"/>
+        <KeyFrameSet>
+        </KeyFrameSet>
+    </Transition>
+    <ConstraintSet android:id="@+id/end4" >
+        <Constraint
+            android:id="@+id/button3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/imagenDeFondo"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/imagenDeFondo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/button5"
+            android:layout_width="64dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="#FF0000" />
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/end3"
+        motion:constraintSetEnd="@+id/end4">
+        <OnClick
+            motion:clickAction="transitionToEnd"
+            motion:targetId="@id/button3"/>
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/end4"
+        motion:constraintSetEnd="@+id/start1">
+        <OnClick
+            motion:clickAction="transitionToEnd"
+            motion:targetId="@id/button5"/>
+    </Transition>
+
+
+</MotionScene>
